@@ -29,7 +29,7 @@ class DropDownWidget<T> extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Visibility(
         visible: title != null,
-        child: TextWidget.semibold(title ?? "", fontSize: sp(16)),
+        child: TextWidget.semibold(title ?? "", size: sp(16)),
       ),
       const VSpace(5),
       DropdownButtonFormField<T>(

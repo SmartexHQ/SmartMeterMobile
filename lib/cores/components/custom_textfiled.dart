@@ -239,7 +239,7 @@ class _BorderlessTextFieldWidgetState extends State<BorderlessTextFieldWidget> {
             if (widget.title != null)
               TextWidget(
                 widget.title!,
-                fontSize: sp(14),
+                size: sp(14),
                 fontWeight: FontWeight.w300,
                 withOpacity: .5,
               ),

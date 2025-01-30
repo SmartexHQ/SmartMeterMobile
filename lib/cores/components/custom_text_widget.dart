@@ -10,8 +10,8 @@ class TextWidget extends StatelessWidget {
     this.text, {
     super.key,
     this.type = TextType.text,
-    this.fontSize = kfsMedium,
-    this.textColor,
+    this.size = kfsMedium,
+    this.color,
     this.fontWeight = FontWeight.w400,
     this.textAlign = TextAlign.left,
     this.maxLines = 100000,
@@ -20,14 +20,15 @@ class TextWidget extends StatelessWidget {
     this.softWrap,
     this.height,
     this.withOpacity,
+    this.style,
   });
 
   const TextWidget.bold(
     this.text, {
     super.key,
     this.type = TextType.text,
-    this.fontSize = kfsMedium,
-    this.textColor,
+    this.size = kfsMedium,
+    this.color,
     this.textAlign = TextAlign.left,
     this.maxLines = 100000,
     this.overflow,
@@ -35,14 +36,15 @@ class TextWidget extends StatelessWidget {
     this.softWrap,
     this.height = 1,
     this.withOpacity,
+    this.style,
   }) : fontWeight = FontWeight.w700;
 
   const TextWidget.semibold(
     this.text, {
     super.key,
     this.type = TextType.text,
-    this.fontSize = kfsMedium,
-    this.textColor,
+    this.size = kfsMedium,
+    this.color,
     this.textAlign = TextAlign.left,
     this.maxLines = 100000,
     this.overflow,
@@ -50,14 +52,15 @@ class TextWidget extends StatelessWidget {
     this.softWrap,
     this.height = 1,
     this.withOpacity,
+    this.style,
   }) : fontWeight = FontWeight.w500;
 
   const TextWidget.light(
     this.text, {
     super.key,
     this.type = TextType.text,
-    this.fontSize = kfsMedium,
-    this.textColor,
+    this.size = kfsMedium,
+    this.color,
     this.textAlign = TextAlign.left,
     this.maxLines = 100000,
     this.overflow,
@@ -65,12 +68,13 @@ class TextWidget extends StatelessWidget {
     this.softWrap,
     this.height = 1,
     this.withOpacity,
+    this.style,
   }) : fontWeight = FontWeight.w300;
 
   final TextType type;
   final String text;
-  final double? fontSize;
-  final Color? textColor;
+  final double? size;
+  final Color? color;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
   final int? maxLines;
@@ -79,36 +83,23 @@ class TextWidget extends StatelessWidget {
   final double? height;
   final double? withOpacity;
   final bool? softWrap;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: type == TextType.text
-          ? GoogleFonts.raleway(
-              fontSize: fontSize,
-              color:
-                  (textColor ?? Theme.of(context).textTheme.titleMedium!.color)!
-                      .withOpacity(withOpacity ?? 1.0),
-              fontWeight: fontWeight,
-              decoration: decoration,
-              decorationColor:
-                  (textColor ?? Theme.of(context).textTheme.titleMedium!.color)!
-                      .withOpacity(withOpacity ?? 1.0),
-              height: height,
-            )
-          : GoogleFonts.firaSans(
-              fontSize: fontSize,
-              color:
-                  (textColor ?? Theme.of(context).textTheme.titleMedium!.color)!
-                      .withOpacity(withOpacity ?? 1.0),
-              fontWeight: fontWeight,
-              decoration: decoration,
-              decorationColor:
-                  (textColor ?? Theme.of(context).textTheme.titleMedium!.color)!
-                      .withOpacity(withOpacity ?? 1.0),
-              height: height,
-            ),
+      style: (style ?? GoogleFonts.firaSans()).copyWith(
+        fontSize: size,
+        color: (color ?? Theme.of(context).textTheme.titleMedium!.color)!
+            .withOpacity(withOpacity ?? 1.0),
+        fontWeight: fontWeight,
+        decoration: decoration,
+        decorationColor:
+            (color ?? Theme.of(context).textTheme.titleMedium!.color)!
+                .withOpacity(withOpacity ?? 1.0),
+        height: height,
+      ),
       textAlign: textAlign,
       overflow: overflow,
       softWrap: softWrap ?? true,

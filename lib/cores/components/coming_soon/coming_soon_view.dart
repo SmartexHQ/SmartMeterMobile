@@ -37,7 +37,7 @@ class ComingSoonPage extends StatelessWidget {
           verticalSpace(),
           TextWidget(
             message,
-            fontSize: sp(24),
+            size: sp(24),
             fontWeight: FontWeight.w600,
             textAlign: TextAlign.center,
           ),

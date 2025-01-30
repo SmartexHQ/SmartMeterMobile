@@ -27,14 +27,14 @@ class InfoBottomSheetWidget extends StatelessWidget {
         verticalSpace(40),
         TextWidget(
           title,
-          fontSize: sp(16),
+          size: sp(16),
           fontWeight: FontWeight.w600,
         ),
         TextWidget(
           description,
-          fontSize: sp(14),
+          size: sp(14),
           fontWeight: FontWeight.w300,
-          textColor: kcSoftTextColor,
+          color: kcSoftTextColor,
         ),
         verticalSpace(40),
         Button(text: "Try Again", onTap: onTap),

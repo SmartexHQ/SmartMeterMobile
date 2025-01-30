@@ -34,13 +34,13 @@ class EmptyStateWidget extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         verticalSpace(20),
-        TextWidget(title, fontSize: sp(20), fontWeight: FontWeight.w600),
+        TextWidget(title, size: sp(20), fontWeight: FontWeight.w600),
         verticalSpace(),
         SizedBox(
           width: sw(75),
           child: TextWidget(
             message,
-            fontSize: sp(15),
+            size: sp(15),
             fontWeight: FontWeight.w400,
             textAlign: TextAlign.center,
             withOpacity: 0.7,

@@ -38,7 +38,7 @@ class LoadingWidget extends StatelessWidget {
         verticalSpace(5),
         TextWidget(
           'Loading, please wait...',
-          fontSize: sp(16),
+          size: sp(16),
           fontWeight: FontWeight.w400,
           textAlign: TextAlign.center,
         ),

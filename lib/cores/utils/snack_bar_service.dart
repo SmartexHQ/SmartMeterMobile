@@ -25,7 +25,7 @@ class SnackBarService {
         const Icon(Icons.error, color: kcErrorColor),
         horizontalSpace(),
         Flexible(
-          child: TextWidget(message, textColor: kcWhite),
+          child: TextWidget(message, color: kcWhite),
         ),
       ]),
     ));
@@ -52,7 +52,7 @@ class SnackBarService {
           const Icon(Icons.check_circle, color: kcSuccessColor),
           horizontalSpace(),
           Flexible(
-            child: TextWidget(message, textColor: kcWhite),
+            child: TextWidget(message, color: kcWhite),
           ),
         ]),
       ),
@@ -80,7 +80,7 @@ class SnackBarService {
           const Icon(Icons.warning, color: kcGrey600),
           horizontalSpace(),
           Flexible(
-            child: TextWidget(message, textColor: kcWhite),
+            child: TextWidget(message, color: kcWhite),
           ),
         ]),
       ),

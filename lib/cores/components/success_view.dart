@@ -52,9 +52,9 @@ class SuccessView extends StatelessWidget {
             width: sw(70),
             child: TextWidget(
               data.title,
-              fontSize: sp(24),
+              size: sp(24),
               fontWeight: FontWeight.w700,
-              textColor: kcPrimaryColor,
+              color: kcPrimaryColor,
               textAlign: TextAlign.center,
             ),
           ),
@@ -63,7 +63,7 @@ class SuccessView extends StatelessWidget {
             width: sw(70),
             child: TextWidget(
               data.text,
-              fontSize: sp(14),
+              size: sp(14),
               fontWeight: FontWeight.w300,
               textAlign: TextAlign.center,
             ),
@@ -73,7 +73,7 @@ class SuccessView extends StatelessWidget {
             width: sw(70),
             child: TextWidget(
               data.otherText,
-              fontSize: sp(14),
+              size: sp(14),
               fontWeight: FontWeight.w300,
               textAlign: TextAlign.center,
             ),

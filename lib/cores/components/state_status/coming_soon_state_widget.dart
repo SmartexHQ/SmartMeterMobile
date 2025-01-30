@@ -26,7 +26,7 @@ class COmingSoonStateWidget extends StatelessWidget {
         verticalSpace(20),
         TextWidget(
           title,
-          fontSize: sp(20),
+          size: sp(20),
           fontWeight: FontWeight.w400,
         ),
         verticalSpace(5),
@@ -38,7 +38,7 @@ class COmingSoonStateWidget extends StatelessWidget {
           width: sw(75),
           child: TextWidget(
             message,
-            fontSize: sp(15),
+            size: sp(15),
             fontWeight: FontWeight.w400,
             textAlign: TextAlign.center,
           ),

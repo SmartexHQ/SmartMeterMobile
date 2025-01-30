@@ -82,7 +82,7 @@ class KeyPad extends StatelessWidget {
           child: TextWidget(
             buttonText,
             fontWeight: FontWeight.w600,
-            fontSize: sp(25),
+            size: sp(25),
           ),
         ),
       ),

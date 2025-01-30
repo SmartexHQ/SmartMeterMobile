@@ -22,6 +22,7 @@ class ScaffoldWidget extends StatelessWidget {
     this.scrollController,
     this.topSafeArea = true,
     this.useBottomPadding = false,
+    this.useBgImage = false,
   });
 
   final Widget? drawer;
@@ -36,8 +37,7 @@ class ScaffoldWidget extends StatelessWidget {
   final ScrollController? scrollController;
   final bool topSafeArea;
   final bool useBottomPadding;
-
-  final LoadingOverlayBloc _loadingOverlayBloc = getIt<LoadingOverlayBloc>();
+  final bool useBgImage;
 
   @override
   Widget build(BuildContext context) {
@@ -60,79 +60,32 @@ class ScaffoldWidget extends StatelessWidget {
       horizontal: usePadding ? sp(kGlobalPadding) : 0,
     ).copyWith(bottom: h(useBottomPadding ? 16 : 0));
 
-    // print('Top Padding: ${topSafeArea}');
-
     return SizedBox(
       height: sh(100),
-      child: BlocBuilder<LoadingOverlayBloc, LoadingOverlayState>(
-        bloc: _loadingOverlayBloc,
-        builder: (context, state) {
-          bool showLoading = false;
-
-          if (state is LoadingOverLayLoading) {
-            showLoading = true;
-          } else {
-            showLoading = false;
-          }
-
-          return Stack(children: [
-            Scaffold(
-              drawerEnableOpenDragGesture: true,
-              key: scaffoldKey,
-              appBar: appBar,
-              backgroundColor: bg ?? Theme.of(context).scaffoldBackgroundColor,
-              body: SafeArea(
-                top: topSafeArea,
-                child: SizedBox(
-                  height: sh(98),
-                  child: useSingleScroll
-                      ? SingleChildScrollView(
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          controller: scrollController,
-                          child: Padding(padding: edgeInsets, child: body),
-                        )
-                      : Padding(padding: edgeInsets, child: body),
-                ),
-              ),
-              drawer: drawer,
-              bottomNavigationBar: bottomNavigationBar,
-              floatingActionButton: floatingActionButton,
+      child: Stack(children: [
+        Scaffold(
+          drawerEnableOpenDragGesture: true,
+          key: scaffoldKey,
+          appBar: appBar,
+          backgroundColor: bg ?? Theme.of(context).scaffoldBackgroundColor,
+          body: SafeArea(
+            top: topSafeArea,
+            child: SizedBox(
+              height: sh(98),
+              child: useSingleScroll
+                  ? SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      controller: scrollController,
+                      child: Padding(padding: edgeInsets, child: body),
+                    )
+                  : Padding(padding: edgeInsets, child: body),
             ),
-
-            // Loading Widget
-            if (showLoading)
-              Visibility(
-                visible: showLoading,
-                child: Container(
-                  height: sh(100),
-                  width: sw(100),
-                  color: Colors.grey.withOpacity(0.6),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        height: h(180),
-                        width: w(180),
-                        decoration: BoxDecoration(
-                          color: context.isDarkMode ? kcPrimaryColor : kcWhite,
-                          borderRadius: BorderRadius.circular(sr(10)),
-                        ),
-                        padding: EdgeInsets.all(w(20)),
-                        // child: Lottie.asset(
-                        //   "assets/lottie/state_status/plane.json",
-                        //   height: h(150),
-                        //   width: w(150),
-                        //   fit: BoxFit.fill,
-                        // ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-          ]);
-        },
-      ),
+          ),
+          drawer: drawer,
+          bottomNavigationBar: bottomNavigationBar,
+          floatingActionButton: floatingActionButton,
+        ),
+      ]),
     );
   }
 }

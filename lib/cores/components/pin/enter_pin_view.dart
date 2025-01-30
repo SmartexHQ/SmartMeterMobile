@@ -90,13 +90,13 @@ class _EnterPinViewState extends State<EnterPinView> {
       child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
         TextWidget(
           "Enter your PIN",
-          fontSize: sp(16),
+          size: sp(16),
           textAlign: TextAlign.center,
           fontWeight: FontWeight.w600,
         ),
         TextWidget(
           "Enter Your Pin To Continue Transaction",
-          fontSize: sp(14),
+          size: sp(14),
           textAlign: TextAlign.center,
           fontWeight: FontWeight.w500,
           withOpacity: 0.5,
@@ -147,7 +147,7 @@ class _EnterPinViewState extends State<EnterPinView> {
           onTap: () {},
           child: TextWidget(
             "Forgot Pin?",
-            fontSize: sp(16),
+            size: sp(16),
             fontWeight: FontWeight.w600,
             decoration: TextDecoration.underline,
           ),
@@ -183,7 +183,7 @@ class _EnterPinViewState extends State<EnterPinView> {
             width: sw(70),
             child: const TextWidget(
               "It seems you have not set your transaction pin yet. Please set your transaction pin to continue",
-              fontSize: 16,
+              size: 16,
               textAlign: TextAlign.center,
             ),
           ),

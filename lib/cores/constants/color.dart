@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // const Color kcDarkTextColor = Color(0xff121111);
-const Color kcPrimaryColor = Color(0xffED2B09);
-const Color kcSecondaryColor = Color(0xFFFF9100);
+const Color kcPrimaryColor = Color(0xff1570EF);
+const Color kcSecondaryColor = Color(0xFFF2F4F7);
 
 const Color kcPrimaryColor50 = Color(0xffFFF4ED);
 
@@ -50,7 +50,7 @@ final Color kcDividerDark = const Color(0xff8C9A9E).withOpacity(0.2);
 
 class ThemeClass {
   static ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xffF5F5F5), // kcBackground,
+    scaffoldBackgroundColor: const Color(0xffffffff), // kcBackground,
     primaryColor: kcPrimaryColor,
     useMaterial3: true,
     appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),

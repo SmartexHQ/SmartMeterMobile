@@ -152,6 +152,7 @@ class ImageWidget extends StatelessWidget {
             imageUrl!,
             // ignore: deprecated_member_use
             color: useIconColor ? color : null,
+            fit: fit,
           ),
         );
     }

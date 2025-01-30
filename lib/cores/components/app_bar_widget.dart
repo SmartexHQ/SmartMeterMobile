@@ -11,11 +11,12 @@ import 'custom_text_widget.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
-    required this.title,
+    this.title = "",
     this.showBackButton = true,
     this.centerTitle = true,
     this.actions,
     this.leading,
+    this.backColor,
   });
 
   final String title;
@@ -23,6 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool centerTitle;
   final Widget? actions;
   final Widget? leading;
+  final Color? backColor;
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +43,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
-
-    // return AppBar(
-    //   title: TextWidget(title, fontWeight: FontWeight.w600),
-    //   centerTitle: centerTitle,
-    //   leadingWidth: showBackButton ? 56 : 0,
-    //   leading: showBackButton ? backButtonWidget(context) : null,
-    //   actions: actions,
-    //   backgroundColor: Colors.transparent,
-    //   elevation: 0,
-    // );
   }
 
   Widget backButtonWidget(BuildContext context) {
@@ -63,8 +55,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: w(40),
         padding: EdgeInsets.only(left: w(5)),
         decoration: BoxDecoration(
-          // color: kcPrimaryColor50,
-          color: Colors.white,
+          color: backColor ?? Colors.white,
           borderRadius: BorderRadius.circular(sp(12)),
         ),
         child: Center(child: Icon(Icons.arrow_back_ios, size: w(18))),
@@ -77,7 +68,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading ?? backButtonWidget(context),
       const Spacer(),
       const HSpace(8),
-      TextWidget.bold(title, fontSize: kfsMedium),
+      TextWidget.bold(title, size: kfsMedium),
       const Spacer(),
       const HSpace(8),
       actions ?? SizedBox(width: w(40), height: h(40)),
@@ -112,7 +103,7 @@ class AppBarWidget extends StatelessWidget {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          TextWidget(title, fontSize: sp(18), fontWeight: FontWeight.w700),
+          TextWidget(title, size: sp(18), fontWeight: FontWeight.w700),
           trilling ?? SizedBox(height: sp(20), width: sp(50)),
         ],
       );
@@ -153,7 +144,7 @@ class AppBarWidget extends StatelessWidget {
         Flexible(
           child: TextWidget(
             title,
-            fontSize: sp(18),
+            size: sp(18),
             fontWeight: FontWeight.w700,
             textAlign: TextAlign.center,
           ),

@@ -148,7 +148,7 @@ class Button extends StatelessWidget {
     } else {
       shape = WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(sr(42)),
+          borderRadius: BorderRadius.circular(sr(8)),
           side: BorderSide(color: borderColor ?? Colors.transparent),
         ),
       );
@@ -201,7 +201,7 @@ class Button extends StatelessWidget {
           if (text != null)
             TextWidget(
               text ?? 'no text',
-              textColor: textColor ?? buttonTextColor,
+              color: textColor ?? buttonTextColor,
               fontWeight: textFontWeight,
             ),
         ]);
@@ -209,8 +209,8 @@ class Button extends StatelessWidget {
 
       return TextWidget(
         text ?? 'no text',
-        textColor: textColor ?? buttonTextColor,
-        fontSize: sp(15),
+        color: textColor ?? buttonTextColor,
+        size: sp(15),
         fontWeight: textFontWeight,
       );
     }

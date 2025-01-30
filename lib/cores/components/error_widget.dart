@@ -46,7 +46,7 @@ class CustomErrorWidget extends StatelessWidget {
               child: TextWidget(
                 message,
                 textAlign: TextAlign.center,
-                fontSize: sp(18),
+                size: sp(18),
               ),
             ),
             const SizedBox(height: 10.0),
@@ -75,7 +75,7 @@ class CustomErrorWidget extends StatelessWidget {
           child: TextWidget(
             message,
             textAlign: TextAlign.center,
-            fontSize: sp(18),
+            size: sp(18),
           ),
         ),
         const SizedBox(height: 10.0),

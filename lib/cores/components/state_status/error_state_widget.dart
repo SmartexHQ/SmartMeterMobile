@@ -24,7 +24,7 @@ class ErrorStateWidget extends StatelessWidget {
       verticalSpace(20),
       TextWidget(
         title,
-        fontSize: sp(20),
+        size: sp(20),
         fontWeight: FontWeight.w700,
       ),
       verticalSpace(),
@@ -32,7 +32,7 @@ class ErrorStateWidget extends StatelessWidget {
         width: sw(75),
         child: TextWidget(
           message,
-          fontSize: sp(14),
+          size: sp(14),
           fontWeight: FontWeight.w400,
           textAlign: TextAlign.center,
         ),
