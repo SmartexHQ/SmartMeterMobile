@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../app/locator.dart';
 import '../constants/constants.dart';
-import '../shared_features/loading_overlay/bloc/loading_over_lay_bloc.dart';
 import '../utils/sizer_utils.dart';
 
 class ScaffoldWidget extends StatelessWidget {
-  ScaffoldWidget({
+  const ScaffoldWidget({
     super.key,
     required this.body,
     this.appBar,
@@ -58,10 +55,10 @@ class ScaffoldWidget extends StatelessWidget {
 
     final EdgeInsets edgeInsets = EdgeInsets.symmetric(
       horizontal: usePadding ? sp(kGlobalPadding) : 0,
-    ).copyWith(bottom: h(useBottomPadding ? 16 : 0));
+    );
 
     return SizedBox(
-      height: sh(100),
+      height: MediaQuery.of(context).size.height,
       child: Stack(children: [
         Scaffold(
           drawerEnableOpenDragGesture: true,
@@ -71,7 +68,7 @@ class ScaffoldWidget extends StatelessWidget {
           body: SafeArea(
             top: topSafeArea,
             child: SizedBox(
-              height: sh(100),
+              height: MediaQuery.of(context).size.height,
               child: useSingleScroll
                   ? SingleChildScrollView(
                       physics: const AlwaysScrollableScrollPhysics(),
