@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 
 import '../constants/font_size.dart';
 
@@ -37,7 +38,7 @@ class TextWidget extends StatelessWidget {
     this.height = 1,
     this.withOpacity,
     this.style,
-  }) : fontWeight = FontWeight.w700;
+  }) : fontWeight = FontWeight.w800;
 
   const TextWidget.semibold(
     this.text, {
@@ -53,7 +54,7 @@ class TextWidget extends StatelessWidget {
     this.height = 1,
     this.withOpacity,
     this.style,
-  }) : fontWeight = FontWeight.w500;
+  }) : fontWeight = FontWeight.w600;
 
   const TextWidget.light(
     this.text, {
@@ -90,7 +91,7 @@ class TextWidget extends StatelessWidget {
     return Text(
       text,
       style: (style ?? GoogleFonts.firaSans()).copyWith(
-        fontSize: size,
+        fontSize: sp(size ?? 16),
         color: (color ?? Theme.of(context).textTheme.titleMedium!.color)!
             .withOpacity(withOpacity ?? 1.0),
         fontWeight: fontWeight,

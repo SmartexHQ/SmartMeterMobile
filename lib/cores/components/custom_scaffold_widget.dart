@@ -71,7 +71,7 @@ class ScaffoldWidget extends StatelessWidget {
           body: SafeArea(
             top: topSafeArea,
             child: SizedBox(
-              height: sh(98),
+              height: sh(100),
               child: useSingleScroll
                   ? SingleChildScrollView(
                       physics: const AlwaysScrollableScrollPhysics(),

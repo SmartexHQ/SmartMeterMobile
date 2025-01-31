@@ -5,6 +5,7 @@ import 'package:smartmetermobile/cores/constants/constants.dart';
 import 'package:smartmetermobile/cores/navigator/navigator.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
 
 class IntroScreen extends StatefulWidget {
   static const String routeName = '/intro';
@@ -55,7 +56,7 @@ class _IntroScreenState extends State<IntroScreen> {
             Button.withBorderLine(
               text: "Signup",
               textColor: Colors.white,
-              onTap: () {},
+              onTap: () => AppRouter.instance.navigateTo(SignUpView.routeName),
             ),
             const VSpace(40),
           ]),

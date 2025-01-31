@@ -2,6 +2,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:smartmetermobile/features/auth/auth_locator.dart';
 
 import '../cores/navigator/app_navigation_observer.dart';
 import '../cores/navigator/navigator.dart';
@@ -22,7 +23,7 @@ class Locator {
     _otherSetup();
 
     /// -------- Authentication -------- ///
-    // setUpAuthLocator();
+    setUpAuthLocator();
   }
 
   static void _otherSetup() {

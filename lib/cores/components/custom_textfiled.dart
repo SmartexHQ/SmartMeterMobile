@@ -69,7 +69,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       valueListenable: obscureText,
       builder: (BuildContext context, bool value, dynamic child) {
         return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          if (widget.title != null) TextWidget.semibold(widget.title!),
+          if (widget.title != null) TextWidget(widget.title!, size: 14),
           const VSpace(5),
           TextFormField(
             focusNode: widget.focusNode,
@@ -95,22 +95,22 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               filled: false,
               border: OutlineInputBorder(
                 borderSide: const BorderSide(color: kcTextNeutral100),
-                borderRadius: BorderRadius.circular(sr(8)),
+                borderRadius: BorderRadius.circular(sr(18)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: const BorderSide(color: kcTextNeutral100),
-                borderRadius: BorderRadius.circular(sr(8)),
+                borderRadius: BorderRadius.circular(sr(18)),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(color: kcErrorColor),
-                borderRadius: BorderRadius.circular(sr(8)),
+                borderRadius: BorderRadius.circular(sr(18)),
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: const BorderSide(color: kcTextNeutral100),
-                borderRadius: BorderRadius.circular(sr(8)),
+                borderRadius: BorderRadius.circular(sr(18)),
               ),
               disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(sr(8)),
+                borderRadius: BorderRadius.circular(sr(18)),
               ),
               hintText: widget.hintText,
               hintStyle: GoogleFonts.raleway(
