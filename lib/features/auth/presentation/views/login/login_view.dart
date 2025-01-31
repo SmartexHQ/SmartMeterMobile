@@ -20,59 +20,71 @@ class _LoginViewState extends State<LoginView> {
       topSafeArea: false,
       usePadding: false,
       useBottomPadding: false,
-      body: Column(children: [
+      body: Stack(children: [
         header(),
-        Transform.translate(
-          offset: Offset(0, -h(10)),
-          child: const LoginFromWidget(),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).padding.bottom,
+            ),
+            child: Transform.translate(
+              offset: Offset(0, -h(10)),
+              child: const LoginFromWidget(),
+            ),
+          ),
         ),
       ]),
     );
   }
 
   Widget header() {
-    return SizedBox(
-      height: sh(55),
-      width: sw(100),
-      child: Stack(children: [
-        ImageWidget(
-          imageTypes: ImageTypes.svg,
-          imageUrl: "assets/image/bg_image.svg",
-          fit: BoxFit.cover,
-          height: sh(55),
-          width: sw(100),
-        ),
-        SizedBox(
-          height: sh(55),
-          width: sw(100),
-          child: Column(children: [
-            CustomAppBar(backColor: const Color(0xffFCFCFD).withOpacity(0.1)),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: w(16)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextWidget(
-                    "Login",
-                    style: GoogleFonts.bricolageGrotesque(),
-                    size: sp(40),
-                    color: Colors.white,
-                  ),
-                  const TextWidget(
-                    "Enter your details to login to your account",
-                    color: Color(0xffFCFCFD),
-                    fontWeight: FontWeight.w400,
-                    textAlign: TextAlign.center,
-                  ),
-                  const Row(children: [])
-                ],
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Container(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+        height: sh(60),
+        width: sw(100),
+        child: Stack(children: [
+          ImageWidget(
+            imageTypes: ImageTypes.svg,
+            imageUrl: "assets/image/bg_image.svg",
+            fit: BoxFit.cover,
+            height: sh(60),
+            width: sw(100),
+          ),
+          SizedBox(
+            height: sh(55),
+            width: sw(100),
+            child: Column(children: [
+              CustomAppBar(backColor: const Color(0xffFCFCFD).withOpacity(0.1)),
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: w(16)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextWidget(
+                      "Login",
+                      style: GoogleFonts.bricolageGrotesque(),
+                      size: sp(40),
+                      color: Colors.white,
+                    ),
+                    const TextWidget(
+                      "Enter your details to login to your account",
+                      color: Color(0xffFCFCFD),
+                      fontWeight: FontWeight.w400,
+                      textAlign: TextAlign.center,
+                    ),
+                    const Row(children: [])
+                  ],
+                ),
               ),
-            ),
-            const VSpace(30),
-          ]),
-        ),
-      ]),
+              const VSpace(30),
+            ]),
+          ),
+        ]),
+      ),
     );
   }
 }

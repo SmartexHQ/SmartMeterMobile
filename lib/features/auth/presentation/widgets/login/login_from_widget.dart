@@ -4,6 +4,7 @@ import 'package:smartmetermobile/cores/components/components.dart';
 import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/utils.dart';
 import 'package:smartmetermobile/features/auth/presentation/cubit/login_cubit.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/forgot_password_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
 
 class LoginFromWidget extends StatelessWidget {
@@ -14,13 +15,12 @@ class LoginFromWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: sh(41),
       padding: EdgeInsets.symmetric(horizontal: w(16)),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(sr(16)),
       ),
-      child: Column(children: [
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
         const VSpace(16),
         TextFieldWidget(
           title: "Email",
@@ -35,12 +35,17 @@ class LoginFromWidget extends StatelessWidget {
           onChanged: _loginCubit.onPasswordChanged,
         ),
         const VSpace(16),
-        const Align(
-          alignment: Alignment.centerRight,
-          child: TextWidget.semibold(
-            "Forgot Password?",
-            color: Color(0xff1570EF),
-            size: 14,
+        GestureDetector(
+          onTap: () => AppRouter.instance.navigateTo(
+            ForgotPasswordView.routeName,
+          ),
+          child: const Align(
+            alignment: Alignment.centerRight,
+            child: TextWidget.semibold(
+              "Forgot Password?",
+              color: Color(0xff1570EF),
+              size: 14,
+            ),
           ),
         ),
         const VSpace(40),

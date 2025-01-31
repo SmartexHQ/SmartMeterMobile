@@ -37,8 +37,8 @@ final class SignUpCubit extends Cubit<SignUpParamz> {
     emit(state.copyWith(confirmPassword: Required.dirty(confirmPassword)));
   }
 
-  void onAccountTypeChanged(AccountType accountType) {
-    emit(state.copyWith(accountType: accountType));
+  void onPhoneChanged(String phone) {
+    emit(state.copyWith(phone: Required.dirty(phone)));
   }
 }
 
@@ -50,7 +50,7 @@ final class SignUpParamz extends RequestParam {
   final Required referralCode;
   final Required password;
   final Required confirmPassword;
-  final AccountType accountType;
+  final Required phone;
 
   const SignUpParamz({
     this.firstName = const Required.pure(),
@@ -60,12 +60,10 @@ final class SignUpParamz extends RequestParam {
     this.referralCode = const Required.pure(),
     this.password = const Required.pure(),
     this.confirmPassword = const Required.pure(),
-    this.accountType = AccountType.none,
+    this.phone = const Required.pure(),
   });
 
   bool get stageOneValid => firstName.isValid && lastName.isValid;
-  bool get stageTwoValid => email.isValid && confirmEmail.isValid;
-  bool get stageThreeValid => password.isValid && confirmPassword.isValid;
 
   SignUpParamz copyWith({
     Required? firstName,
@@ -75,7 +73,7 @@ final class SignUpParamz extends RequestParam {
     Required? referralCode,
     Required? password,
     Required? confirmPassword,
-    AccountType? accountType,
+    Required? phone,
   }) {
     return SignUpParamz(
       firstName: firstName ?? this.firstName,
@@ -85,7 +83,7 @@ final class SignUpParamz extends RequestParam {
       referralCode: referralCode ?? this.referralCode,
       password: password ?? this.password,
       confirmPassword: confirmPassword ?? this.confirmPassword,
-      accountType: accountType ?? this.accountType,
+      phone: phone ?? this.phone,
     );
   }
 
@@ -98,7 +96,7 @@ final class SignUpParamz extends RequestParam {
         referralCode,
         password,
         confirmPassword,
-        accountType
+        phone,
       ];
 
   @override
@@ -112,9 +110,6 @@ final class SignUpParamz extends RequestParam {
       if (password.isValid) 'password': password.value,
       if (confirmPassword.isValid)
         'password_confirmation': confirmPassword.value,
-      "user_type": accountType.name,
     };
   }
 }
-
-enum AccountType { tipper, tippee, none }

@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smartmetermobile/cores/components/components.dart';
+import 'package:smartmetermobile/cores/components/app_bar_widget.dart';
+import 'package:smartmetermobile/cores/components/custom_scaffold_widget.dart';
+import 'package:smartmetermobile/cores/components/custom_text_widget.dart';
+import 'package:smartmetermobile/cores/components/image_widget.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
-import 'package:smartmetermobile/features/auth/presentation/widgets/sign_up/sign_up_form_widget.dart';
+import 'package:smartmetermobile/features/auth/presentation/widgets/forgot_password/reset_password_form_widget.dart';
 
-class SignUpView extends StatefulWidget {
-  static const String routeName = "/signup";
-  const SignUpView({super.key});
+class ResetPasswordView extends StatelessWidget {
+  static const String routeName = "/reset-password";
+  const ResetPasswordView({super.key});
 
-  @override
-  State<SignUpView> createState() => _SignUpViewState();
-}
-
-class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
-      // bg: kcPrimaryColor,
       useSingleScroll: false,
-      usePadding: false,
       topSafeArea: false,
-      body: Column(children: [
+      usePadding: false,
+      useBottomPadding: false,
+      body: Stack(children: [
         header(),
-        Transform.translate(
-          offset: Offset(0, -h(12)),
-          child: const SignUpFromWidget(),
+        const Align(
+          alignment: Alignment.bottomCenter,
+          child: ResetPasswordFormWidget(),
         ),
       ]),
     );
@@ -32,18 +30,18 @@ class _SignUpViewState extends State<SignUpView> {
 
   Widget header() {
     return SizedBox(
-      height: sh(28),
+      height: sh(62),
       width: sw(100),
       child: Stack(children: [
         ImageWidget(
           imageTypes: ImageTypes.svg,
           imageUrl: "assets/image/bg_image.svg",
           fit: BoxFit.cover,
-          height: sh(28),
+          height: sh(62),
           width: sw(100),
         ),
         SizedBox(
-          height: sh(28),
+          height: sh(70),
           width: sw(100),
           child: Column(children: [
             CustomAppBar(backColor: const Color(0xffFCFCFD).withOpacity(0.1)),
@@ -54,13 +52,13 @@ class _SignUpViewState extends State<SignUpView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextWidget(
-                    "Signup",
+                    "Reset password",
                     style: GoogleFonts.bricolageGrotesque(),
                     size: sp(40),
                     color: Colors.white,
                   ),
                   const TextWidget(
-                    "Create a new account to access amazing benefits",
+                    "Try to use a password you’ll remember",
                     color: Color(0xffFCFCFD),
                     fontWeight: FontWeight.w400,
                     textAlign: TextAlign.center,

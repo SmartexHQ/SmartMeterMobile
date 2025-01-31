@@ -43,7 +43,8 @@ class _IntroScreenState extends State<IntroScreen> {
             width: w(220),
           ),
         ),
-        Align(
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: w(16)),
           alignment: Alignment.bottomCenter,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Button(
