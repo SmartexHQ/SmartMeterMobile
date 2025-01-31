@@ -2,8 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/auth_success_view.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/enter_code_view.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/forgot_password_view.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/reset_password_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/intro/intro_screen.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
 
 import 'error_route_screen.dart';
 
@@ -17,6 +22,21 @@ class RouteGenerator {
 
       case LoginView.routeName:
         return pageRoute(const LoginView());
+
+      case SignUpView.routeName:
+        return pageRoute(const SignUpView());
+
+      case AuthSuccessView.routeName:
+        return pageRoute(const AuthSuccessView());
+
+      case ForgotPasswordView.routeName:
+        return pageRoute(const ForgotPasswordView());
+
+      case EnterCodeForgotPasswordView.routeName:
+        return pageRoute(const EnterCodeForgotPasswordView());
+
+      case ResetPasswordView.routeName:
+        return pageRoute(const ResetPasswordView());
 
       default:
         return errorRoute();
