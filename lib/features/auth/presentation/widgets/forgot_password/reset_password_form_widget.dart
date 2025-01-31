@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smartmetermobile/cores/components/custom_button.dart';
 import 'package:smartmetermobile/cores/components/custom_textfiled.dart';
+import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
+import 'package:smartmetermobile/features/auth/presentation/views/auth_success_view.dart';
 
 class ResetPasswordFormWidget extends StatelessWidget {
   const ResetPasswordFormWidget({super.key});
@@ -34,7 +36,14 @@ class ResetPasswordFormWidget extends StatelessWidget {
           onChanged: (_) {},
         ),
         const VSpace(40),
-        Button(text: "Reset Password", onTap: () => {}),
+        Button(
+          text: "Reset Password",
+          onTap: () => AppRouter.instance.navigate(
+            const AuthSuccessView(
+              subtitle: "Your password was changed successfully.",
+            ),
+          ),
+        ),
         const VSpace(30),
       ]),
     );

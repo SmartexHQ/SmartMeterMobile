@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(430, 932),
       builder: (context, Widget? child) {
         return MaterialApp(
-          title: 'TipMee',
+          title: 'Smart Meter',
           theme: ThemeClass.lightTheme,
           initialRoute: IntroScreen.routeName,
           onGenerateRoute: RouteGenerator.generateRoute,
