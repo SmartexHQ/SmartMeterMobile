@@ -6,7 +6,6 @@ import 'package:smartmetermobile/cores/constants/constants.dart';
 import 'package:smartmetermobile/cores/navigator/navigator.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/reset_password_view.dart';
-import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
 
 class EnterCodeForgotPasswordView extends StatelessWidget {
   static const String routeName = "/enter-code-forgot-password";

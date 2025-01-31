@@ -20,9 +20,9 @@ class ForgotPasswordView extends StatelessWidget {
       useBottomPadding: false,
       body: Stack(children: [
         header(),
-        Align(
+        const Align(
           alignment: Alignment.bottomCenter,
-          child: const ForgotPasswordFormWidget(),
+          child: ForgotPasswordFormWidget(),
         ),
       ]),
     );

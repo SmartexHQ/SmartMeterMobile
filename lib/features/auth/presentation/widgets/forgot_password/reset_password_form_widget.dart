@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartmetermobile/cores/components/custom_button.dart';
 import 'package:smartmetermobile/cores/components/custom_textfiled.dart';
-import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
-import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/enter_code_view.dart';
 
 class ResetPasswordFormWidget extends StatelessWidget {
   const ResetPasswordFormWidget({super.key});
