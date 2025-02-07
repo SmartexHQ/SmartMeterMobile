@@ -40,6 +40,7 @@ class ResetPasswordFormWidget extends StatelessWidget {
           text: "Reset Password",
           onTap: () => AppRouter.instance.navigate(
             const AuthSuccessView(
+              title: "",
               subtitle: "Your password was changed successfully.",
             ),
           ),

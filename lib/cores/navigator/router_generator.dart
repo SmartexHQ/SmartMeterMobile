@@ -9,6 +9,7 @@ import 'package:smartmetermobile/features/auth/presentation/views/forgot_passwor
 import 'package:smartmetermobile/features/auth/presentation/views/intro/intro_screen.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
+import 'package:smartmetermobile/features/home/presentation/view/home_tab_view.dart';
 
 import 'error_route_screen.dart';
 
@@ -37,6 +38,9 @@ class RouteGenerator {
 
       case ResetPasswordView.routeName:
         return pageRoute(const ResetPasswordView());
+
+      case HomeTabView.routeName:
+        return pageRoute(const HomeTabView());
 
       default:
         return errorRoute();

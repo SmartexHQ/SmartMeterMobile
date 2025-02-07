@@ -6,6 +6,7 @@ import 'package:smartmetermobile/cores/utils/utils.dart';
 import 'package:smartmetermobile/features/auth/presentation/cubit/login_cubit.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/forgot_password/forgot_password_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
+import 'package:smartmetermobile/features/home/presentation/view/home_tab_view.dart';
 
 class LoginFromWidget extends StatelessWidget {
   const LoginFromWidget({super.key});
@@ -49,7 +50,10 @@ class LoginFromWidget extends StatelessWidget {
           ),
         ),
         const VSpace(40),
-        Button(text: "Login", onTap: () {}),
+        Button(
+          text: "Login",
+          onTap: () => AppRouter.instance.navigateTo(HomeTabView.routeName),
+        ),
         const VSpace(30),
         GestureDetector(
           onTap: () => AppRouter.instance.navigateTo(SignUpView.routeName),
