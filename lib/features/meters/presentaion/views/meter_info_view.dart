@@ -4,7 +4,10 @@ import 'package:smartmetermobile/cores/components/components.dart';
 import 'package:smartmetermobile/cores/constants/color.dart';
 import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/comsumption_history/comsumption_history_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/edit_meter/edit_meter_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/meter_switch/meter_switch_view.dart';
+import 'package:smartmetermobile/features/pyament/presentaion/view/payment_receipt_view.dart';
 
 class MeterInfoView extends StatelessWidget {
   static const String routeName = '/meter_info_view';
@@ -40,12 +43,16 @@ class MeterInfoView extends StatelessWidget {
         ),
         const VSpace(16),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          _headerAction("Consumption History"),
-          _headerAction("Meter Switch"),
+          _headerAction("Consumption History", onTap: () {
+            AppRouter.instance.navigateTo(ComsumptionHistoryView.routeName);
+          }),
+          _headerAction("Meter Switch", onTap: () {
+            AppRouter.instance.navigateTo(MeterSwitchView.routeName);
+          }),
         ]),
         const VSpace(22),
         const TextWidget.semibold("Energy Purchase History", size: 16),
-        const VSpace(22),
+        const VSpace(16),
         BoxWidget(
           ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
@@ -54,7 +61,13 @@ class MeterInfoView extends StatelessWidget {
             separatorBuilder: (_, __) => const Divider(
               color: Color(0xffE4E7EC),
             ),
-            itemBuilder: (context, index) => _itemWidget(),
+            itemBuilder: (context, index) => GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => AppRouter.instance.navigateTo(
+                PaymentReceiptView.routeName,
+              ),
+              child: _itemWidget(),
+            ),
           ),
           color: const Color(0xffF2F4F7),
           borderColor: const Color(0xffF2F4F7),
