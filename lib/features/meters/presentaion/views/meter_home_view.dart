@@ -5,6 +5,7 @@ import 'package:smartmetermobile/cores/constants/color.dart';
 import 'package:smartmetermobile/cores/navigator/navigator.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/meter_info_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_one_view.dart';
 import 'package:smartmetermobile/features/shared/widget/search_widget.dart';
 
 class MeterHomeView extends StatelessWidget {
@@ -26,7 +27,9 @@ class MeterHomeView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            _headerAction("Request New Meter"),
+            _headerAction("Request New Meter", onTap: () {
+              AppRouter.instance.navigateTo(RequestMeterViewStepOne.routeName);
+            }),
             _headerAction("Meter Requests History"),
           ]),
           const VSpace(24),

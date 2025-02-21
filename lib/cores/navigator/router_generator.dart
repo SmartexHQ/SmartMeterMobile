@@ -14,6 +14,8 @@ import 'package:smartmetermobile/features/meters/presentaion/views/comsumption_h
 import 'package:smartmetermobile/features/meters/presentaion/views/edit_meter/edit_meter_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/meter_info_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/meter_switch/meter_switch_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_one_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_two_view.dart';
 import 'package:smartmetermobile/features/pyament/presentaion/view/payment_receipt_view.dart';
 
 import 'error_route_screen.dart';
@@ -61,6 +63,12 @@ class RouteGenerator {
 
       case MeterSwitchView.routeName:
         return pageRoute(const MeterSwitchView());
+
+      case RequestMeterViewStepOne.routeName:
+        return pageRoute(const RequestMeterViewStepOne());
+
+      case RequestMeterViewStepTwo.routeName:
+        return pageRoute(const RequestMeterViewStepTwo());
 
       default:
         return errorRoute();

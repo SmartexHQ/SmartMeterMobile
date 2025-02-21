@@ -69,7 +69,12 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       valueListenable: obscureText,
       builder: (BuildContext context, bool value, dynamic child) {
         return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          if (widget.title != null) TextWidget(widget.title!, size: 14),
+          if (widget.title != null)
+            TextWidget(
+              widget.title!,
+              size: 14,
+              color: const Color(0xff475467),
+            ),
           const VSpace(5),
           TextFormField(
             focusNode: widget.focusNode,

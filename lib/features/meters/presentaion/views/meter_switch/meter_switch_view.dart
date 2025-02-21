@@ -19,7 +19,7 @@ class _MeterSwitchViewState extends State<MeterSwitchView> {
     const color = Color(0xff344054);
 
     return ScaffoldWidget(
-      appBar: const CustomAppBar(title: ":Meter Switch"),
+      appBar: const CustomAppBar(title: "Meter Switch"),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         BoxWidget(
           Row(children: [

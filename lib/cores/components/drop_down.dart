@@ -29,14 +29,18 @@ class DropDownWidget<T> extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Visibility(
         visible: title != null,
-        child: TextWidget.semibold(title ?? "", size: sp(16)),
+        child: TextWidget(
+          title ?? "",
+          size: sp(16),
+          color: const Color(0xff475467),
+        ),
       ),
       const VSpace(5),
       DropdownButtonFormField<T>(
         // isDense: true,
         borderRadius: BorderRadius.circular(sr(8.0)),
         value: value,
-        icon: const Icon(Icons.keyboard_arrow_down),
+        icon: const Icon(Icons.keyboard_arrow_down, color: Color(0xff475467)),
         style: GoogleFonts.inter(
           color: Theme.of(context).textTheme.titleMedium!.color,
           fontWeight: FontWeight.w600,
@@ -65,22 +69,22 @@ class DropDownWidget<T> extends StatelessWidget {
           // ),
           border: OutlineInputBorder(
             borderSide: const BorderSide(color: kcTextNeutral100),
-            borderRadius: BorderRadius.circular(sr(8)),
+            borderRadius: BorderRadius.circular(sr(18)),
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: kcTextNeutral100),
-            borderRadius: BorderRadius.circular(sr(8)),
+            borderRadius: BorderRadius.circular(sr(18)),
           ),
           errorBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: kcErrorColor),
-            borderRadius: BorderRadius.circular(sr(8)),
+            borderRadius: BorderRadius.circular(sr(18)),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: kcTextNeutral100),
-            borderRadius: BorderRadius.circular(sr(8)),
+            borderRadius: BorderRadius.circular(sr(18)),
           ),
           disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(sr(8)),
+            borderRadius: BorderRadius.circular(sr(18)),
           ),
           hintText: hintText,
           hintStyle: GoogleFonts.raleway(
