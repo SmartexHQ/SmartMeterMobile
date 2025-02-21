@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartmetermobile/app/locator.dart';
 import 'package:smartmetermobile/cores/components/components.dart';
+import 'package:smartmetermobile/cores/constants/color.dart';
 import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/utils.dart';
 import 'package:smartmetermobile/features/auth/presentation/cubit/login_cubit.dart';
@@ -49,9 +50,23 @@ class LoginFromWidget extends StatelessWidget {
             ),
           ),
         ),
-        const VSpace(40),
+        const VSpace(35),
         Button(
           text: "Login",
+          onTap: () => AppRouter.instance.navigateTo(HomeTabView.routeName),
+        ),
+        const VSpace(16),
+        Button.withBorderLine(
+          text: "Login with Biometrics",
+          color: const Color(0xffEFF8FF),
+          iconData: ImageWidget(
+            imageTypes: ImageTypes.svg,
+            imageUrl: "assets/icon/thumb.svg",
+            color: kcPrimaryColor,
+            useIconColor: true,
+            height: h(20),
+            width: w(20),
+          ),
           onTap: () => AppRouter.instance.navigateTo(HomeTabView.routeName),
         ),
         const VSpace(30),

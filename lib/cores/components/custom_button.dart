@@ -196,14 +196,14 @@ class Button extends StatelessWidget {
     } else {
       if (iconData != null) {
         return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          iconData ?? const SizedBox(),
-          if (text != null) const HSpace(),
           if (text != null)
             TextWidget(
               text ?? 'no text',
               color: textColor ?? buttonTextColor,
               fontWeight: textFontWeight,
             ),
+          if (text != null) const HSpace(),
+          iconData ?? const SizedBox(),
         ]);
       }
 

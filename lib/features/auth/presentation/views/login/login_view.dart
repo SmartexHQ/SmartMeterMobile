@@ -43,7 +43,7 @@ class _LoginViewState extends State<LoginView> {
       alignment: Alignment.topCenter,
       child: Container(
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
-        height: sh(60),
+        height: sh(50),
         width: sw(100),
         child: Stack(children: [
           ImageWidget(
