@@ -6,7 +6,7 @@ const Color kcSecondaryColor = Color(0xFFF2F4F7);
 
 const Color kcPrimaryColor50 = Color(0xffFFF4ED);
 
-const Color kcTextColor = Color(0xFF111213);
+const Color kcTextColor = Color(0xFF344054);
 const Color kcSoftTextColor = Color(0xFF4F5E62);
 
 const Color kcGreyLight = Color(0xffEEEEEE);

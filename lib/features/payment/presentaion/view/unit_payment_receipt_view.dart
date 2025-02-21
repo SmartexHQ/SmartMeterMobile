@@ -4,9 +4,9 @@ import 'package:smartmetermobile/cores/components/components.dart';
 import 'package:smartmetermobile/cores/constants/color.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 
-class PaymentReceiptView extends StatelessWidget {
-  static const String routeName = '/payment-receipt';
-  const PaymentReceiptView({super.key});
+class UnitPaymentReceiptView extends StatelessWidget {
+  static const String routeName = '/unit_payment-receipt';
+  const UnitPaymentReceiptView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,15 @@ class PaymentReceiptView extends StatelessWidget {
           dashPattern: const [2, 2],
           color: const Color(0xffD0D5DD),
           child: Column(children: [
-            const TextWidget.bold("₦50,000", size: 32, color: kcPrimaryColor),
+            const TextWidget.bold("Summary", size: 32, color: kcPrimaryColor),
             const VSpace(20),
-            buildInfoRow("Units purchased", "51.23 kWh"),
+            buildInfoRow("Amount", "₦100,000.00"),
+            dottedDivider(),
+            buildInfoRow("Units purchased:", "400 kWh "),
             dottedDivider(),
             buildInfoRow("Meter name", "Yaba Flat Room 3"),
             dottedDivider(),
-            buildInfoRow("Meter number", "58101245502"),
+            buildInfoRow("Meter number:", "58101245502"),
             dottedDivider(),
             buildInfoRow("Token", "2456 3673 5276 5742 9045"),
             dottedDivider(),

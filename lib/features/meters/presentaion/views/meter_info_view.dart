@@ -7,7 +7,7 @@ import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/comsumption_history/comsumption_history_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/edit_meter/edit_meter_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/meter_switch/meter_switch_view.dart';
-import 'package:smartmetermobile/features/pyament/presentaion/view/payment_receipt_view.dart';
+import 'package:smartmetermobile/features/payment/presentaion/view/payment_receipt_view.dart';
 
 class MeterInfoView extends StatelessWidget {
   static const String routeName = '/meter_info_view';

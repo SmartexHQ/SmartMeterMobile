@@ -9,6 +9,8 @@ import 'package:smartmetermobile/features/auth/presentation/views/forgot_passwor
 import 'package:smartmetermobile/features/auth/presentation/views/intro/intro_screen.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
+import 'package:smartmetermobile/features/buy_unit/presentation/view/buy_unit_for_others_view.dart';
+import 'package:smartmetermobile/features/buy_unit/presentation/view/buy_unit_for_self_view.dart';
 import 'package:smartmetermobile/features/home/presentation/view/home_tab_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/comsumption_history/comsumption_history_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/edit_meter/edit_meter_view.dart';
@@ -17,7 +19,8 @@ import 'package:smartmetermobile/features/meters/presentaion/views/meter_switch/
 import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_history_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_one_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_two_view.dart';
-import 'package:smartmetermobile/features/pyament/presentaion/view/payment_receipt_view.dart';
+import 'package:smartmetermobile/features/payment/presentaion/view/payment_receipt_view.dart';
+import 'package:smartmetermobile/features/payment/presentaion/view/unit_payment_receipt_view.dart';
 
 import 'error_route_screen.dart';
 
@@ -73,6 +76,15 @@ class RouteGenerator {
 
       case RequestHistoryView.routeName:
         return pageRoute(const RequestHistoryView());
+
+      case BuyUnitForSelfView.routeName:
+        return pageRoute(const BuyUnitForSelfView());
+
+      case BuyUnitForOthersView.routeName:
+        return pageRoute(const BuyUnitForOthersView());
+
+      case UnitPaymentReceiptView.routeName:
+        return pageRoute(const UnitPaymentReceiptView());
 
       default:
         return errorRoute();
