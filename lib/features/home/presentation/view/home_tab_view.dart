@@ -6,6 +6,7 @@ import 'package:smartmetermobile/features/buy_unit/presentation/view/buy_unit_ho
 import 'package:smartmetermobile/features/home/presentation/view/home_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/meter_home_view.dart';
 import 'package:smartmetermobile/features/payment/presentaion/view/payment_home_view.dart';
+import 'package:smartmetermobile/features/profile/presentation/view/profile_view.dart';
 
 class HomeTabView extends StatefulWidget {
   static const String routeName = "/home_tab_view";
@@ -23,8 +24,7 @@ class _HomeTabViewState extends State<HomeTabView> {
     MeterHomeView(),
     BuyUnitHomeView(),
     PaymentHomeView(),
-    Center(child: Text('Notifications Page')),
-    Center(child: Text('Profile Page')),
+    ProfileView(),
   ];
 
   void _onItemTapped(int index) {
