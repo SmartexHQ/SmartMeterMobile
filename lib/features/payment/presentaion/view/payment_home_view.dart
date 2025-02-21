@@ -4,6 +4,7 @@ import 'package:smartmetermobile/cores/components/components.dart';
 import 'package:smartmetermobile/cores/navigator/app_router.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/payment/presentaion/view/payment_receipt_view.dart';
+import 'package:smartmetermobile/features/payment/presentaion/view/tamper_fee_view.dart';
 import 'package:smartmetermobile/features/shared/widget/search_widget.dart';
 
 class PaymentHomeView extends StatelessWidget {
@@ -15,24 +16,27 @@ class PaymentHomeView extends StatelessWidget {
     return ScaffoldWidget(
       appBar: const CustomAppBar(title: "Payment"),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        BoxWidget(
-          Row(mainAxisSize: MainAxisSize.min, children: [
-            ImageWidget(
-              imageTypes: ImageTypes.svg,
-              imageUrl: "assets/icon/no_strick.svg",
-              height: h(18),
-              width: w(18),
-            ),
-            const HSpace(4),
-            const TextWidget(
-              "Tamper Fee 5",
-              size: 14,
-              color: Color(0xff344054),
-            ),
-          ]),
-          borderColor: const Color(0xffD0D5DD),
-          color: const Color(0xffF2F4F7),
-          padding: EdgeInsets.symmetric(vertical: h(11), horizontal: w(16)),
+        GestureDetector(
+          onTap: () => AppRouter.instance.navigateTo(TamperFeeView.routeName),
+          child: BoxWidget(
+            Row(mainAxisSize: MainAxisSize.min, children: [
+              ImageWidget(
+                imageTypes: ImageTypes.svg,
+                imageUrl: "assets/icon/no_strick.svg",
+                height: h(18),
+                width: w(18),
+              ),
+              const HSpace(4),
+              const TextWidget(
+                "Tamper Fee 5",
+                size: 14,
+                color: Color(0xff344054),
+              ),
+            ]),
+            borderColor: const Color(0xffD0D5DD),
+            color: const Color(0xffF2F4F7),
+            padding: EdgeInsets.symmetric(vertical: h(11), horizontal: w(16)),
+          ),
         ),
         const VSpace(16),
         const SharedSearchWidget(),

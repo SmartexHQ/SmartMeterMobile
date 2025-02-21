@@ -20,6 +20,7 @@ import 'package:smartmetermobile/features/meters/presentaion/views/request_meter
 import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_one_view.dart';
 import 'package:smartmetermobile/features/meters/presentaion/views/request_meter/request_meter_step_two_view.dart';
 import 'package:smartmetermobile/features/payment/presentaion/view/payment_receipt_view.dart';
+import 'package:smartmetermobile/features/payment/presentaion/view/tamper_fee_view.dart';
 import 'package:smartmetermobile/features/payment/presentaion/view/unit_payment_receipt_view.dart';
 
 import 'error_route_screen.dart';
@@ -85,6 +86,9 @@ class RouteGenerator {
 
       case UnitPaymentReceiptView.routeName:
         return pageRoute(const UnitPaymentReceiptView());
+
+      case TamperFeeView.routeName:
+        return pageRoute(const TamperFeeView());
 
       default:
         return errorRoute();

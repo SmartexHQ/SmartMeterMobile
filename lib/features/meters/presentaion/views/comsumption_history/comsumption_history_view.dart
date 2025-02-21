@@ -13,9 +13,7 @@ class ComsumptionHistoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
-      appBar: const CustomAppBar(
-        title: "Consumption History",
-      ),
+      appBar: const CustomAppBar(title: "Consumption History"),
       body: BoxWidget(
         ListView.separated(
           physics: const NeverScrollableScrollPhysics(),
