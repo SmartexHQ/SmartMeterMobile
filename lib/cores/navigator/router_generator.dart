@@ -10,6 +10,8 @@ import 'package:smartmetermobile/features/auth/presentation/views/intro/intro_sc
 import 'package:smartmetermobile/features/auth/presentation/views/login/login_view.dart';
 import 'package:smartmetermobile/features/auth/presentation/views/login/sign_up_view.dart';
 import 'package:smartmetermobile/features/home/presentation/view/home_tab_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/edit_meter/edit_meter_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/meter_info_view.dart';
 
 import 'error_route_screen.dart';
 
@@ -41,6 +43,12 @@ class RouteGenerator {
 
       case HomeTabView.routeName:
         return pageRoute(const HomeTabView());
+
+      case MeterInfoView.routeName:
+        return pageRoute(const MeterInfoView());
+
+      case EditMeterView.routeName:
+        return pageRoute(const EditMeterView());
 
       default:
         return errorRoute();

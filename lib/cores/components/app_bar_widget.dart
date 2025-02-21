@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:smartmetermobile/cores/constants/constants.dart';
-import 'package:smartmetermobile/cores/constants/font_size.dart';
 
 import '../navigator/app_router.dart';
 import '../utils/sizer_utils.dart';
@@ -13,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.title = "",
     this.showBackButton = true,
-    this.centerTitle = true,
+    this.centerTitle = false,
     this.actions,
     this.leading,
     this.backColor,
@@ -53,12 +52,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Container(
         height: h(40),
         width: w(40),
-        padding: EdgeInsets.only(left: w(5)),
         decoration: BoxDecoration(
-          color: backColor ?? Colors.white,
+          border: Border.all(color: const Color(0xffE4E7EC), width: 1),
+          color: backColor ?? const Color(0xffF2F4F7),
           borderRadius: BorderRadius.circular(sp(12)),
         ),
-        child: Center(child: Icon(Icons.arrow_back_ios, size: w(18))),
+        child: Center(
+          child: Icon(
+            Icons.arrow_back,
+            size: w(18),
+            color: const Color(0xff667085),
+          ),
+        ),
       ),
     );
   }
@@ -66,11 +71,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget buildIconAndText(BuildContext context) {
     return Row(mainAxisSize: MainAxisSize.min, children: [
       leading ?? backButtonWidget(context),
-      const Spacer(),
-      const HSpace(8),
+      if (!showBackButton) const Spacer(),
+      const HSpace(10),
       TextWidget.bold(title, size: kfsMedium),
       const Spacer(),
-      const HSpace(8),
+      const HSpace(10),
       actions ?? SizedBox(width: w(40), height: h(40)),
     ]);
   }

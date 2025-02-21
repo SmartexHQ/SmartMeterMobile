@@ -3,6 +3,7 @@ import 'package:smartmetermobile/cores/components/image_widget.dart';
 import 'package:smartmetermobile/cores/constants/constants.dart';
 import 'package:smartmetermobile/cores/utils/sizer_utils.dart';
 import 'package:smartmetermobile/features/home/presentation/view/home_view.dart';
+import 'package:smartmetermobile/features/meters/presentaion/views/meter_home_view.dart';
 
 class HomeTabView extends StatefulWidget {
   static const String routeName = "/home_tab_view";
@@ -17,7 +18,7 @@ class _HomeTabViewState extends State<HomeTabView> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeView(),
-    Center(child: Text('Search Page')),
+    MeterHomeView(),
     Center(child: Text('Add Page')),
     Center(child: Text('Notifications Page')),
     Center(child: Text('Profile Page')),
