@@ -15,5 +15,6 @@ class MyHttpOverrides extends HttpOverrides {
 void main() {
   HttpOverrides.global = MyHttpOverrides();
   Locator.init();
+
   runApp(const MyApp());
 }
